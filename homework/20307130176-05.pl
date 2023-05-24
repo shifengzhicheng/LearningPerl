@@ -65,14 +65,14 @@ $cos2 = sub {
 
 sub tri1 {
     my ( $x, $n ) = @_;
-    foreach (@{$n}) {
+    foreach ( @{$n} ) {
         print "$_\t", $sin1->( $x, $_ ) + $cos1->( $x, $_ ), "\n";
     }
 }
 
 sub tri2 {
     my ( $x, $n ) = @_;
-    foreach (@{$n}) {
+    foreach ( @{$n} ) {
         print "$_\t", $sin2->( $x, $_ ) + $cos2->( $x, $_ ), "\n";
     }
 }
