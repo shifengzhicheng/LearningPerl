@@ -19,7 +19,7 @@ foreach my $file(@list){
     $f{$file}=$s;
 }
 #遍历list中的文件，读取其大小并存储
-my @k = sort {$f{$a} <=> $f{$b}} keys %f;
+my @k = sort { $f{$a} <=> $f{$b} || $a cmp $b } keys %f;
 #根据value的大小比较并排序key,将key存在@k数组中
 
 foreach my $file(@k){
@@ -32,7 +32,7 @@ sub Nohashtable{
     my @files = grep {-f $_} <*>;
 # 对文件按大小排序
 
-@files = sort { -s $a <=> -s $b } @files;
+@files = sort { -s $a <=> -s $b || $a cmp $b} @files;
 
 # 输出文件名和大小
 #因为-s操作可以直接得到文件的大小，所以实际上并不需要两个循环
